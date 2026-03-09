@@ -8,6 +8,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      titleSpacing: 16,
       title: Text(
         title,
         style: const TextStyle(fontSize: 28),
