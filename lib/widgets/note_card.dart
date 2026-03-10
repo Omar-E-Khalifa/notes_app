@@ -1,22 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:notes_app/models/note_model.dart';
 import 'package:notes_app/widgets/custom_text.dart';
 
 class NoteCard extends StatelessWidget {
-  const NoteCard(
-      {super.key,
-      required this.color,
-      required this.title,
-      required this.description,
-      required this.date});
-  final String title, description, date;
-  final Color color;
+  const NoteCard({super.key, required this.noteModel});
+  final NoteModel noteModel;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 4),
       child: Card(
-        color: color,
+        color: noteModel.noteColor,
         child: SizedBox(
           height: 220,
           child: Padding(
@@ -25,18 +20,18 @@ class NoteCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 ListTile(
-                  contentPadding: EdgeInsets.all(0),
+                  contentPadding: EdgeInsets.zero,
                   iconColor: Colors.black,
                   title: Padding(
                     padding: const EdgeInsets.only(bottom: 25),
                     child: CustomText(
-                        text: title,
+                        text: noteModel.title,
                         maxLines: 2,
                         fontSize: 24,
                         fontWeight: FontWeight.bold),
                   ),
                   subtitle: CustomText(
-                    text: description,
+                    text: noteModel.description,
                     maxLines: 2,
                     fontSize: 18,
                     color: Colors.black.withValues(alpha: 0.7),
@@ -47,9 +42,9 @@ class NoteCard extends StatelessWidget {
                     iconSize: 32,
                   ),
                 ),
-                Spacer(flex: 1),
+                Spacer(),
                 CustomText(
-                  text: date,
+                  text: noteModel.date,
                   maxLines: 1,
                   fontSize: 14,
                   color: Colors.black.withValues(alpha: 0.7),
