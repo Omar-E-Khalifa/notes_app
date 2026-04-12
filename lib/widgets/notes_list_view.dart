@@ -7,12 +7,15 @@ class NotesListView extends StatelessWidget {
   final List<NoteModel> notes;
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: notes.length,
-      itemBuilder: (context, index) => NoteCard(
-        noteModel: notes[index],
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 6),
+      child: ListView.builder(
+        itemCount: notes.length,
+        itemBuilder: (context, index) => NoteCard(
+          noteModel: notes[index],
+        ),
+        physics: const BouncingScrollPhysics(),
       ),
-      physics: const BouncingScrollPhysics(),
     );
   }
 }
