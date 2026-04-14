@@ -12,16 +12,16 @@ class CustomButton extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: SizedBox(
         width: MediaQuery.of(context).size.width,
-        child: FloatingActionButton(
+        child: ElevatedButton(
           onPressed: () {},
-          backgroundColor: KprimaryColor,
-          child: Text(
-            'Add',
-            style: TextStyle(
-              color: Colors.black,
-              fontSize: 18,
+          style: ElevatedButton.styleFrom(
+            backgroundColor: KprimaryColor,
+            foregroundColor: Colors.black,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadiusGeometry.circular(12),
             ),
           ),
+          child: Text("Add"),
         ),
       ),
     );
