@@ -11,7 +11,7 @@ class ReadNoteView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(title: note.title),
+      appBar: CustomAppBar(title: note.title, icon: null,),
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
         child: ListView(
