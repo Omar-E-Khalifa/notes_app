@@ -1,3 +1,3 @@
 import 'package:flutter/material.dart';
 
-const Color KprimaryColor = Colors.cyan;
+const Color kPrimaryColor = Colors.cyan;

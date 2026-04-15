@@ -20,7 +20,7 @@ class CustomFloatingActionButton extends StatelessWidget {
         );
       },
       shape: CircleBorder(),
-      backgroundColor: KprimaryColor,
+      backgroundColor: kPrimaryColor,
       foregroundColor: Colors.black,
       child: Icon(
         Icons.add,

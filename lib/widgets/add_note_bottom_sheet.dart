@@ -15,14 +15,14 @@ class AddNoteBottomSheet extends StatelessWidget {
           CustomTextField(
               hintText: 'title',
               borderColor: Colors.white,
-              hintColor: KprimaryColor,
-              cursorColor: KprimaryColor,
+              hintColor: kPrimaryColor,
+              cursorColor: kPrimaryColor,
               textInputAction: TextInputAction.next),
           CustomTextField(
             hintText: 'Content',
             borderColor: Colors.white,
-            hintColor: KprimaryColor,
-            cursorColor: KprimaryColor,
+            hintColor: kPrimaryColor,
+            cursorColor: kPrimaryColor,
             height: 200,
             textInputType: TextInputType.multiline,
             textInputAction: TextInputAction.newline,

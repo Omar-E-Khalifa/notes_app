@@ -16,7 +16,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       actions: [
         Padding(
           padding: const EdgeInsets.only(right: 16),
-          child: const CustomSearchIcon(),
+          child: CustomSearchIcon(),
         )
       ],
     );

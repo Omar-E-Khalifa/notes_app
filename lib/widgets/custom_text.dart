@@ -10,7 +10,7 @@ class CustomText extends StatelessWidget {
       this.color = Colors.black});
 
   final String text;
-  final int maxLines;
+  final int? maxLines;
   final FontWeight fontWeight;
   final double fontSize;
   final Color color;
@@ -19,7 +19,7 @@ class CustomText extends StatelessWidget {
     return Text(
       text,
       maxLines: maxLines,
-      overflow: TextOverflow.ellipsis,
+      overflow: maxLines == null ? null : TextOverflow.ellipsis,
       style: TextStyle(
         fontSize: fontSize,
         color: color,
