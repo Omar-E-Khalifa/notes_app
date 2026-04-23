@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 
 class CustomAppbarIcon extends StatelessWidget {
-  const CustomAppbarIcon({super.key, required this.icon});
+  const CustomAppbarIcon({super.key, required this.icon, required this.onTap});
 
   final IconData icon;
+  final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       borderRadius: BorderRadius.circular(12),
-      onTap: () {},
+      onTap: onTap,
       child: Container(
         height: 40,
         width: 40,

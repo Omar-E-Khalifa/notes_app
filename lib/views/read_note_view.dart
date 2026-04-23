@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:notes_app/models/note_model.dart';
+import 'package:notes_app/views/edit_note_view.dart';
 import 'package:notes_app/widgets/custom_app_bar.dart';
 import 'package:notes_app/widgets/custom_text.dart';
 
@@ -15,6 +16,14 @@ class ReadNoteView extends StatelessWidget {
         title: note.title,
         icon: Icons.edit,
         titleSize: 20,
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => EditNoteView(),
+            ),
+          );
+        },
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),

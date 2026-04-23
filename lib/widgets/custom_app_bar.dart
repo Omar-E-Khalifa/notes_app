@@ -6,10 +6,11 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       {super.key,
       required this.title,
       required this.icon,
-      required this.titleSize});
+      required this.titleSize, required this.onTap});
   final String title;
   final IconData? icon;
   final double titleSize;
+  final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +25,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           Padding(
             padding: const EdgeInsets.only(right: 16),
             child: CustomAppbarIcon(
-              icon: icon!, //I'm stuck here
+              icon: icon!,
+              onTap: onTap,
             ),
           )
       ],
