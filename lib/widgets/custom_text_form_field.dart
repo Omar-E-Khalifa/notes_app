@@ -42,6 +42,7 @@ class CustomTextFormField extends StatelessWidget {
             if (value?.isEmpty ?? true) {
               return 'Field is required';
             }
+            return null;
           },
           maxLines: obscureValue //obscured Text can't work with null maxLines
               ? 1

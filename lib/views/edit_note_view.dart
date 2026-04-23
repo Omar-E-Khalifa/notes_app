@@ -35,7 +35,9 @@ class EditNoteView extends StatelessWidget {
               textInputAction: TextInputAction.newline,
             ),
             SizedBox(height: 30),
-            // CustomButton(),
+            CustomButton(
+              onPressed: () {},
+            ),
             SizedBox(height: 15),
           ],
         ),
