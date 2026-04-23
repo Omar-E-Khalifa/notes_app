@@ -2,9 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:notes_app/widgets/custom_search_icon.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const CustomAppBar({super.key, required this.title, required this.icon});
+  const CustomAppBar(
+      {super.key,
+      required this.title,
+      required this.icon,
+      required this.titleSize});
   final String title;
   final IconData? icon;
+  final double titleSize;
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +17,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       titleSpacing: 16,
       title: Text(
         title,
-        style: const TextStyle(fontSize: 28),
+        style: TextStyle(fontSize: titleSize),
       ),
       actions: [
         if (icon != null)

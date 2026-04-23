@@ -11,10 +11,15 @@ class ReadNoteView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(title: note.title, icon: null,),
+      appBar: CustomAppBar(
+        title: note.title,
+        icon: Icons.edit,
+        titleSize: 20,
+      ),
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
         child: ListView(
+          physics: BouncingScrollPhysics(),
           children: [
             CustomText(
               text: note.description,

@@ -10,7 +10,9 @@ class NotesView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const CustomAppBar(
-        title: 'Notes', icon: Icons.search,
+        title: 'Notes',
+        icon: Icons.search,
+        titleSize: 28,
       ),
       body: const HomeViewBody(),
       floatingActionButton: CustomFloatingActionButton(),
