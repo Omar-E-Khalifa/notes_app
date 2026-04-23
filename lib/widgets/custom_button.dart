@@ -3,8 +3,9 @@ import 'package:notes_app/constants.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton({
-    super.key,
+    super.key, required this.onPressed,
   });
+  final VoidCallback onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +14,7 @@ class CustomButton extends StatelessWidget {
       child: SizedBox(
         width: MediaQuery.of(context).size.width,
         child: ElevatedButton(
-          onPressed: () {},
+          onPressed: onPressed,
           style: ElevatedButton.styleFrom(
             backgroundColor: kPrimaryColor,
             foregroundColor: Colors.black,

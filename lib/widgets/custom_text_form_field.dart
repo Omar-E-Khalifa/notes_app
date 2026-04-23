@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 
-class CustomTextField extends StatelessWidget {
-  const CustomTextField({
+class CustomTextFormField extends StatelessWidget {
+  const CustomTextFormField({
     super.key,
     required this.hintText,
     this.onChanged,
     this.obscureValue = false,
     this.textInputType = TextInputType.multiline,
-    this.onSubmited,
     this.borderColor = Colors.black,
     this.height = 60,
     this.hintColor = Colors.white30,
     this.textInputAction = TextInputAction.unspecified,
     this.cursorColor = Colors.white,
+    this.onSaved,
   });
   final String hintText;
   final Color hintColor;
@@ -23,7 +23,7 @@ class CustomTextField extends StatelessWidget {
   final TextInputType textInputType;
   final TextInputAction textInputAction;
   final Function(String)? onChanged;
-  final Function(String)? onSubmited;
+  final Function(String?)? onSaved;
 
   @override
   Widget build(BuildContext context) {
@@ -31,13 +31,18 @@ class CustomTextField extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
       child: SizedBox(
         height: height,
-        child: TextField(
+        child: TextFormField(
           cursorColor: cursorColor,
           obscureText: obscureValue,
           keyboardType: textInputType,
           textInputAction: textInputAction,
           onChanged: onChanged,
-          onSubmitted: onSubmited,
+          onSaved: onSaved,
+          validator: (value) {
+            if (value?.isEmpty ?? true) {
+              return 'Field is required';
+            }
+          },
           maxLines: obscureValue //obscured Text can't work with null maxLines
               ? 1
               : null,
@@ -48,6 +53,7 @@ class CustomTextField extends StatelessWidget {
             contentPadding: EdgeInsets.symmetric(horizontal: 6, vertical: 12),
             enabledBorder: borderBuilder(1),
             focusedBorder: borderBuilder(2),
+            border: borderBuilder(1),
             hintText: hintText,
             hintStyle: TextStyle(fontSize: 20, color: hintColor),
           ),

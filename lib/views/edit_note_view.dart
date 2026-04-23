@@ -3,7 +3,7 @@ import 'package:notes_app/constants.dart';
 import 'package:notes_app/models/note_model.dart';
 import 'package:notes_app/widgets/custom_app_bar.dart';
 import 'package:notes_app/widgets/custom_button.dart';
-import 'package:notes_app/widgets/custom_text_field.dart';
+import 'package:notes_app/widgets/custom_text_form_field.dart';
 
 class EditNoteView extends StatelessWidget {
   const EditNoteView({super.key, required this.note});
@@ -19,13 +19,13 @@ class EditNoteView extends StatelessWidget {
         child: Column(
           children: [
             SizedBox(height: 15),
-            CustomTextField(
+            CustomTextFormField(
                 hintText: note.title,
                 borderColor: Colors.white,
                 hintColor: kPrimaryColor,
                 cursorColor: kPrimaryColor,
                 textInputAction: TextInputAction.next),
-            CustomTextField(
+            CustomTextFormField(
               hintText: note.description,
               borderColor: Colors.white,
               hintColor: kPrimaryColor,
@@ -35,7 +35,7 @@ class EditNoteView extends StatelessWidget {
               textInputAction: TextInputAction.newline,
             ),
             SizedBox(height: 30),
-            CustomButton(),
+            // CustomButton(),
             SizedBox(height: 15),
           ],
         ),
