@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class NoteModel {
-  final String title, description, date;
+  final String title;
+  final String description;
+  final String date;
   final Color noteColor;
 
   const NoteModel({
