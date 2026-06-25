@@ -3,9 +3,13 @@ import 'package:notes_app/constants.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton({
-    super.key, required this.onPressed,
+    super.key,
+    required this.onPressed,
+    this.isLoading = false,
   });
   final VoidCallback onPressed;
+
+  final bool isLoading;
 
   @override
   Widget build(BuildContext context) {
@@ -22,8 +26,26 @@ class CustomButton extends StatelessWidget {
               borderRadius: BorderRadiusGeometry.circular(12),
             ),
           ),
-          child: Text("Add"),
+          child:
+              isLoading ? CustomCircularProgressIndicator() : const Text("Add"),
         ),
+      ),
+    );
+  }
+}
+
+class CustomCircularProgressIndicator extends StatelessWidget {
+  const CustomCircularProgressIndicator({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 30,
+      width: 30,
+      child: const CircularProgressIndicator(
+        color: Colors.black,
       ),
     );
   }
