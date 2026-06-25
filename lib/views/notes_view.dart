@@ -11,7 +11,8 @@ class NotesView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => NotesCubit(),
+      lazy: false,
+      create: (context) => NotesCubit()..fetchAllNotes(),
       child: Scaffold(
         appBar: CustomAppBar(
           title: 'Notes',
