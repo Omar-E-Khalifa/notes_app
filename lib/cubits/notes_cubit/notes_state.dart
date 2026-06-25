@@ -14,4 +14,6 @@ final class NotesSuccess extends NotesState {
 
 final class NotesFailed extends NotesState {
   late final String errMessage;
+
+  NotesFailed(String string);
 }
