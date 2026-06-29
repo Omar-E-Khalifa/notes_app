@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:notes_app/cubits/notes_cubit/notes_cubit.dart';
+
 import 'package:notes_app/widgets/custom_app_bar.dart';
 import 'package:notes_app/widgets/custom_floating_action_button.dart';
 import 'package:notes_app/widgets/home_view_body.dart';
@@ -10,19 +9,15 @@ class NotesView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      lazy: false,
-      create: (context) => NotesCubit()..fetchAllNotes(),
-      child: Scaffold(
-        appBar: CustomAppBar(
-          title: 'Notes',
-          icon: Icons.search,
-          titleSize: 28,
-          onTap: () {},
-        ),
-        body: const HomeViewBody(),
-        floatingActionButton: CustomFloatingActionButton(),
+    return Scaffold(
+      appBar: CustomAppBar(
+        title: 'Notes',
+        icon: Icons.search,
+        titleSize: 28,
+        onTap: () {},
       ),
+      body: const HomeViewBody(),
+      floatingActionButton: CustomFloatingActionButton(),
     );
   }
 }

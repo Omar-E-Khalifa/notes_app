@@ -19,7 +19,7 @@ class CustomFloatingActionButton extends StatelessWidget {
           context: context,
           builder: (context) {
             return BlocProvider.value(
-              value: NotesCubit(),
+              value: BlocProvider.of<NotesCubit>(context),
               child: AddNoteBottomSheet(),
             );
           },
