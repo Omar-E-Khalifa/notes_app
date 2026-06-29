@@ -48,8 +48,7 @@ class _AddNoteFromState extends State<AddNoteFrom> {
             onSaved: (value) => content = value,
           ),
           SizedBox(height: 30),
-          BlocBuilder<AddNoteCubitCubit, AddNoteCubitState>(
-              builder: (context, State) {
+          BlocBuilder<AddNoteCubit, AddNoteState>(builder: (context, State) {
             return CustomButton(
               isLoading: State is AddNoteLoading ? true : false,
               onPressed: () {
@@ -60,8 +59,7 @@ class _AddNoteFromState extends State<AddNoteFrom> {
                       description: content!,
                       date: DateTime.now().toString(),
                       colorValue: Colors.blueAccent.toARGB32());
-                  BlocProvider.of<AddNoteCubitCubit>(context)
-                      .addNote(noteModel);
+                  BlocProvider.of<AddNoteCubit>(context).addNote(noteModel);
                 } else {
                   autovalidateMode = AutovalidateMode.always;
                 }

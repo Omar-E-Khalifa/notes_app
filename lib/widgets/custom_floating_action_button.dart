@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes_app/constants.dart';
+import 'package:notes_app/cubits/notes_cubit/notes_cubit.dart';
 import 'package:notes_app/widgets/add_note_bottom_sheet.dart';
 
 class CustomFloatingActionButton extends StatelessWidget {
@@ -16,7 +18,10 @@ class CustomFloatingActionButton extends StatelessWidget {
           shape: RoundedRectangleBorder(),
           context: context,
           builder: (context) {
-            return AddNoteBottomSheet();
+            return BlocProvider.value(
+              value: NotesCubit(),
+              child: AddNoteBottomSheet(),
+            );
           },
         );
       },

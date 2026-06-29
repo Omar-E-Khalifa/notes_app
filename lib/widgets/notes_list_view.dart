@@ -19,11 +19,7 @@ class NotesListView extends StatelessWidget {
           child: ListView.builder(
             itemCount: notes.length,
             itemBuilder: (context, index) => NoteCard(
-              noteModel: NoteModel(
-                  title: 'Here goes the title',
-                  description: 'Here goes the description',
-                  date: '23/4/2026',
-                  colorValue: Colors.lightBlue.toARGB32()),
+              noteModel: notes[index],
             ),
             physics: const BouncingScrollPhysics(),
           ),
